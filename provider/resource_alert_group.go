@@ -6,6 +6,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 
@@ -89,7 +90,7 @@ func resourceAlertGroup() *schema.Resource {
 			"targets": &schema.Schema{
 				Type:             schema.TypeList,
 				Computed:         false,
-				Required:         true,
+				Required:         false,
 				Optional:         false,
 				Description:      "",
 				DiffSuppressFunc: tools.EqualIgnoringOrder,
